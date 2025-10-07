@@ -7,12 +7,13 @@ import xlrd
 
 st.set_page_config(page_title="FortiMeta", page_icon="logo.png", layout="centered")
 
-st.markdown("""
-    <div style="display: flex; align-items: center;">
-        <img src="logo.png"; width="60">
-        <h1 style="padding-left: 10px;">FortiMeta</h1>
-    </div>
-""", unsafe_allow_html=True)
+import streamlit as st
+
+col1, col2 = st.columns([1, 5])
+with col1:
+    st.image("logo.png", width=60)
+with col2:
+    st.markdown("<h1 style='padding-top: 10px;'>FortiMeta</h1>", unsafe_allow_html=True)
 
 st.title("❇️ Generate metadata variables")
 

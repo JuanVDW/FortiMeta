@@ -5,7 +5,7 @@ import io
 import zipfile
 import xlrd
 
-st.set_page_config(page_title="FortiMeta", page_icon="❇️", layout="centered")
+st.set_page_config(page_title="FortiMeta", page_icon="logo.png", layout="centered")
 
 st.markdown("""
     <div style="display: flex; align-items: center;">

@@ -9,7 +9,7 @@ st.set_page_config(page_title="FortiMeta", page_icon="logo.png", layout="centere
 
 st.markdown("""
     <div style="display: flex; align-items: center;">
-        <img src="logo.png" width="60">
+        <img src="logo.png"; width="60">
         <h1 style="padding-left: 10px;">FortiMeta</h1>
     </div>
 """, unsafe_allow_html=True)

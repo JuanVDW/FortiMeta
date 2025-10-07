@@ -13,7 +13,7 @@ col1, col2 = st.columns([1, 5])
 with col1:
     st.image("logo.png", width=120)
 with col2:
-    st.markdown("<h1 style='margin-top: 40px;'>Generate metadata variables</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='margin-top: 10px;'>Generate metadata variables</h1>", unsafe_allow_html=True)
 
 # --- Files upload ---
 uploaded_excel = st.file_uploader("🗃️ Import the Excel file", type=["xlsx", "xls"])

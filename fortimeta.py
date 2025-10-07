@@ -7,6 +7,9 @@ import xlrd
 
 st.set_page_config(page_title="FortiMeta", page_icon="❇️", layout="centered")
 
+st.sidebar.image("logo.png", use_container_width=True)
+st.sidebar.markdown("## Generate metadata variables 🧩")
+
 st.title("❇️ Generate metadata variables")
 
 # --- Files upload ---

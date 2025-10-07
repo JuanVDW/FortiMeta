@@ -5,13 +5,13 @@ import io
 import zipfile
 import xlrd
 
-st.set_page_config(page_title="Générateur Excel → Template", page_icon="🧩", layout="centered")
+st.set_page_config(page_title="FortiMeta", page_icon="🧩", layout="centered")
 
-st.title("🧩 Générateur de fichiers depuis Excel et Template")
+st.title("🧩 Generate metadata variables")
 
-# --- Upload des fichiers ---
-uploaded_excel = st.file_uploader("📊 Importer le fichier Excel", type=["xlsx", "xls"])
-uploaded_template = st.file_uploader("📄 Importer le fichier Template", type=["txt"])
+# --- Files upload ---
+uploaded_excel = st.file_uploader("📊 Import the Excel file", type=["xlsx", "xls"])
+uploaded_template = st.file_uploader("📄 Import the Template file", type=["txt"])
 
 mode = st.radio("Mode de génération :", ["Un fichier par ligne", "Tout dans un seul fichier"])
 
@@ -44,7 +44,6 @@ if uploaded_excel and uploaded_template:
                 context = row.to_dict()
                 output_text = template.render(**context)
                 all_texts.append(output_text)
-                all_texts.append("\n" + "-"*50 + "\n")
             final_text = "\n".join(all_texts)
             st.success("Fichier unique généré ✅")
             st.download_button(

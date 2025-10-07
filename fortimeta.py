@@ -5,12 +5,12 @@ import io
 import zipfile
 import xlrd
 
-st.set_page_config(page_title="FortiMeta", page_icon="🧩", layout="centered")
+st.set_page_config(page_title="FortiMeta", page_icon="❇️", layout="centered")
 
-st.title("🧩 Generate metadata variables")
+st.title("❇️ Generate metadata variables")
 
 # --- Files upload ---
-uploaded_excel = st.file_uploader("📊 Import the Excel file", type=["xlsx", "xls"])
+uploaded_excel = st.file_uploader("🗃️ Import the Excel file", type=["xlsx", "xls"])
 uploaded_template = st.file_uploader("📄 Import the Template file", type=["txt"])
 
 mode = st.radio("Mode de génération :", ["Un fichier par ligne", "Tout dans un seul fichier"])

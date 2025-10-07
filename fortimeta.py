@@ -9,15 +9,11 @@ st.set_page_config(page_title="FortiMeta", page_icon="logo.png", layout="centere
 
 import streamlit as st
 
-st.markdown(
-    """
-    <div style="display: flex; align-items: center;">
-        <img src="logo.png" width="120" style="margin-right: 20px;">
-        <h1 style="margin: 0;">Generate metadata variables</h1>
-    </div>
-    """,
-    unsafe_allow_html=True
-)
+col1, col2 = st.columns([1, 5])
+with col1:
+    st.image("logo.png", width=120)
+with col2:
+    st.markdown("<h1 style='margin-top: 40px;'>Generate metadata variables</h1>", unsafe_allow_html=True)
 
 # --- Files upload ---
 uploaded_excel = st.file_uploader("🗃️ Import the Excel file", type=["xlsx", "xls"])

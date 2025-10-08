@@ -36,7 +36,6 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # --- Section 1: Template upload ---
-st.markdown("<div class='section'></div>", unsafe_allow_html=True)
 st.markdown("<p class='upload-label'>📄 Upload Template file</p>", unsafe_allow_html=True)
 uploaded_template = st.file_uploader("", type=["txt"])
 
@@ -44,7 +43,6 @@ uploaded_template = st.file_uploader("", type=["txt"])
 st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 
 # --- Section 2: Excel upload ---
-st.markdown("<div class='section'></div>", unsafe_allow_html=True)
 st.markdown("<p class='upload-label'>🗃️ Upload Excel file</p>", unsafe_allow_html=True)
 uploaded_excel = st.file_uploader("", type=["xlsx", "xls"])
 

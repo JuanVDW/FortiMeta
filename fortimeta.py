@@ -22,10 +22,14 @@ st.markdown("""
             font-size: 22px !important;
             font-weight: bold !important;
             margin-bottom: -30px !important;
-        }
+        }    
         .section {
-            margin-top: 30px;
-            margin-bottom: 15px;
+            background-color: #f7f7f7;
+            padding: 25px;
+            border-radius: 15px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }   
         .separator {
             height: 20px;
@@ -37,10 +41,13 @@ st.markdown("""
 
 # --- Helper function for consistent layout ---
 def labeled_section(label, widget_func, *args, **kwargs):
-    """Render a label and widget with aligned styling"""
+    """Render a gray-background section with label + widget"""
     with st.container():
+        st.markdown("<div class='section'>", unsafe_allow_html=True)
         st.markdown(f"<p class='upload-label'>{label}</p>", unsafe_allow_html=True)
-        return widget_func("", *args, **kwargs)
+        value = widget_func("", *args, **kwargs)
+        st.markdown("</div>", unsafe_allow_html=True)
+        return value
 
 # --- Section 1: Template upload ---
 uploaded_template = labeled_section("📄 Upload Template file", st.file_uploader, type=["txt"])

@@ -20,9 +20,9 @@ uploaded_excel = st.file_uploader("🗃️ Upload Excel file", type=["xlsx", "xl
 mode = st.radio("Generation mode:", ["One file per row", "All in a single file"])
 
 if uploaded_excel and uploaded_template:
-    data = pd.read_excel(uploaded_excel)
     template_text = uploaded_template.read().decode("utf-8")
     template = Template(template_text)
+    data = pd.read_excel(uploaded_excel)
 
     if st.button("🚀 Generate files"):
         if mode == "One file per row":

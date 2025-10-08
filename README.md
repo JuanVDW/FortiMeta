@@ -1,4 +1,8 @@
-# <img src="logo.png" alt="FortiMeta Logo" width="80" style="vertical-align: middle;"> FortiMeta
+<div style="display: flex; align-items: center;">
+  <img src="logo.png" alt="FortiMeta Logo" width="50">
+  <h1 style="margin-left: 15px;">FortiMeta</h1>
+</div>
+
 
 
 **FortiMeta** is a simple Streamlit web application that automatically generates text files from an Excel sheet and a text template.

@@ -15,9 +15,9 @@ with col2:
 
 # --- File uploads ---
 st.markdown("""
-<div style='background-color:#f0f2f6;padding:10px;border-radius:10px;'>
-    <h3 style='margin:0;'>📄 Upload Template file</h3>
-</div>
+    <p style='font-size:22px; font-weight:bold;'>
+        📄 Upload Template file
+    </p>
 """, unsafe_allow_html=True)
 
 uploaded_template = st.file_uploader("", type=["txt"])

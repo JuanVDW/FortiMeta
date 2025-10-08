@@ -84,37 +84,37 @@ def generate_button(label):
     
 generate_clicked = labeled_section("🚀 Generate files", generate_button, "Generate files")
     
-    if generate_clicked:
-        if mode == "One file per row":
-            zip_buffer = io.BytesIO()
-            with zipfile.ZipFile(zip_buffer, "w", zipfile.ZIP_DEFLATED) as zf:
-                for i, row in data.iterrows():
-                    context = row.to_dict()
-                    output_text = template.render(**context)
-                    base_name = str(row[data.columns[0]]).replace(" ", "_")
-                    zf.writestr(f"output_{base_name}.txt", output_text)
-            zip_buffer.seek(0)
-            st.success(f"{len(data)} files generated ✅")
-            st.download_button(
-                label="📦 Download ZIP",
-                data=zip_buffer,
-                file_name="outputs.zip",
-                mime="application/zip",
-            )
-        else:
-            all_texts = []
+if generate_clicked:
+    if mode == "One file per row":
+        zip_buffer = io.BytesIO()
+        with zipfile.ZipFile(zip_buffer, "w", zipfile.ZIP_DEFLATED) as zf:
             for i, row in data.iterrows():
                 context = row.to_dict()
                 output_text = template.render(**context)
-                all_texts.append(output_text)
-            final_text = "\n".join(all_texts)
-            st.success("Single file generated ✅")
-            st.download_button(
-                label="📄 Download file",
-                data=final_text,
-                file_name="output.txt",
-                mime="text/plain",
-            )
+                base_name = str(row[data.columns[0]]).replace(" ", "_")
+                zf.writestr(f"output_{base_name}.txt", output_text)
+        zip_buffer.seek(0)
+        st.success(f"{len(data)} files generated ✅")
+        st.download_button(
+            label="📦 Download ZIP",
+            data=zip_buffer,
+            file_name="outputs.zip",
+            mime="application/zip",
+        )
+    else:
+        all_texts = []
+        for i, row in data.iterrows():
+            context = row.to_dict()
+            output_text = template.render(**context)
+            all_texts.append(output_text)
+        final_text = "\n".join(all_texts)
+        st.success("Single file generated ✅")
+        st.download_button(
+            label="📄 Download file",
+            data=final_text,
+            file_name="output.txt",
+            mime="text/plain",
+        )
 
 # --- README.md ---
 with open("README.md", "r", encoding="utf-8") as f:

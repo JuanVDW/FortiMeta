@@ -40,10 +40,6 @@ def labeled_section(label, widget_func, *args, **kwargs):
     with st.container():
         st.markdown(f"<p class='upload-label'>{label}</p>", unsafe_allow_html=True)
         return widget_func("", *args, **kwargs)
-        
-# --- Generate button in stylized section ---
-def generate_button(label):
-    return st.button(label)
 
 # --- Template upload ---
 uploaded_template = labeled_section("📄 Upload Template file", st.file_uploader, type=["txt"])
@@ -82,8 +78,7 @@ if uploaded_excel and uploaded_template:
         st.error(f"Error reading file: {e}")
         st.stop()
         
- generate_clicked = labeled_section("🚀 Generate files", generate_button, "Generate files")       
-    if generate_clicked:
+    if st.button("🚀 Generate files"):
         if mode == "One file per row":
             zip_buffer = io.BytesIO()
             with zipfile.ZipFile(zip_buffer, "w", zipfile.ZIP_DEFLATED) as zf:

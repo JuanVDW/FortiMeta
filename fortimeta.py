@@ -14,8 +14,10 @@ with col2:
     st.markdown("<h1 style='margin-top: 7px;margin-left:-20px;'>Generate metadata variables</h1>", unsafe_allow_html=True)
 
 # --- File uploads ---
-st.markdown("<h3>📄 Upload Template file</h3>", unsafe_allow_html=True)
-uploaded_template = st.file_uploader("", type=["txt"])  # texte du label vide
+with st.container():
+    st.markdown("<h3>📄 Upload Template file</h3>", unsafe_allow_html=True)
+    uploaded_template = st.file_uploader("", type=["txt"])  # texte du label vide
+
 uploaded_excel = st.file_uploader("🗃️ Upload Excel file", type=["xlsx", "xls"])
 
 mode = st.radio("Generation mode:", ["One file per row", "All in a single file"])

@@ -15,18 +15,12 @@ with col1:
 with col2:
     st.markdown("<h1 style='margin-top: 7px;margin-left:-20px;'>Generate metadata variables</h1>", unsafe_allow_html=True)
 
-# Lire le README
+# --- README.md ---
 with open("README.md", "r", encoding="utf-8") as f:
     readme_content = f.read()
 
-# Bouton pour afficher/masquer
-if "show_readme" not in st.session_state:
-    st.session_state.show_readme = False
-
-if st.button("📘 Show/Hide Instructions / README"):
-    st.session_state.show_readme = not st.session_state.show_readme
-
-if st.session_state.show_readme:
+# --- Show/Hide Bouton ---
+with st.expander("📘 Show/Hide Instructions"):
     st.markdown(readme_content, unsafe_allow_html=True)
 
 # --- Global style for labels and layout ---

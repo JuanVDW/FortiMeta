@@ -41,25 +41,25 @@ def labeled_section(label, widget_func, *args, **kwargs):
         st.markdown(f"<p class='upload-label'>{label}</p>", unsafe_allow_html=True)
         return widget_func("", *args, **kwargs)
 
-# --- Section 1: Template upload ---
+# --- Template upload ---
 uploaded_template = labeled_section("📄 Upload Template file", st.file_uploader, type=["txt"])
 
 # --- Separator ---
 st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 
-# --- Section 2: Excel upload ---
+# --- Excel upload ---
 uploaded_excel = labeled_section("🗃️ Upload Excel file", st.file_uploader, type=["xlsx", "xls"])
 
 # --- Separator ---
 st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 
-# --- Section 3: Options ---
+# --- Mode ---
 mode = labeled_section("⚙️ Generation mode", st.radio, options=["One file per row", "All in a single file"])
 
 # --- Separator ---
 st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 
-# --- Section 4: File generation ---
+# --- File generation ---
 if uploaded_excel and uploaded_template:
     template_text = uploaded_template.read().decode("utf-8")
     template = Template(template_text)
@@ -97,9 +97,6 @@ if uploaded_excel and uploaded_template:
                 file_name="output.txt",
                 mime="text/plain",
             )
-# --- Section 5: Info ---
-else:
-    st.info("⬆️ Please upload both the Excel and the Template files to continue.")
 
 # --- README.md ---
 with open("README.md", "r", encoding="utf-8") as f:
@@ -108,4 +105,3 @@ with open("README.md", "r", encoding="utf-8") as f:
 # --- Show/Hide Bouton ---
 with st.expander("📘 Show/Hide Instructions"):
     st.markdown(readme_content, unsafe_allow_html=True)
-

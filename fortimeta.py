@@ -50,6 +50,7 @@ uploaded_excel = st.file_uploader("", type=["xlsx", "xls"])
 st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 
 # --- Section 3: Options ---
+st.markdown("<p class='upload-label'>⚙️ Generation mode</p>", unsafe_allow_html=True)
 mode = st.radio("⚙️ Generation mode:", ["One file per row", "All in a single file"])
 
 # --- Separator ---

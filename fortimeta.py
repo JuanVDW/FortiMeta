@@ -21,7 +21,7 @@ st.markdown("""
         .upload-label {
             font-size: 22px !important;
             font-weight: bold !important;
-            margin-bottom: -20px !important;
+            margin-bottom: -30px !important;
         }
         .section {
             margin-top: 30px;

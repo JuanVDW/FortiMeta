@@ -1,18 +1,13 @@
-<div style="display: flex; align-items: center;">
-  <img src="logo.png" alt="FortiMeta Logo" width="50">
-  <h1 style="margin-left: 15px;">FortiMeta</h1>
-</div>
+# FortiMeta
 
-
-
-**FortiMeta** is a simple Streamlit web application that automatically generates text files from an Excel sheet and a text template.
+**FortiMeta** is a simple Streamlit web application that automatically generates text files from a text template and an Excel sheet.
 
 ---
 
 ## 🚀 Features
 
+- 📄 Upload a **Template file (.txt)** using `{{Variable}}` placeholders
 - 🗃️ Upload an **Excel file** containing variables  
-- 📄 Upload a **Template file (.txt)** using `$Variable$` placeholders  
 - ⚙️ Choose between:
   - One output file per Excel row
   - A single combined file
@@ -51,3 +46,10 @@
 | Bob   | OpenAI     |
 
 **Template (template.txt):**
+
+to configure metadata
+  edit "{{hostname}}"-"global"
+    set {{siteID}}
+    set {{subnet}}.0/24
+  next
+end

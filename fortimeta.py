@@ -35,23 +35,27 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
+# --- Helper function for consistent layout ---
+def labeled_section(label, widget_func, *args, **kwargs):
+    """Render a label and widget with aligned styling"""
+    with st.container():
+        st.markdown(f"<p class='upload-label'>{label}</p>", unsafe_allow_html=True)
+        return widget_func("", *args, **kwargs)
+
 # --- Section 1: Template upload ---
-st.markdown("<p class='upload-label'>📄 Upload Template file</p>", unsafe_allow_html=True)
-uploaded_template = st.file_uploader("", type=["txt"])
+uploaded_template = labeled_section("📄 Upload Template file", st.file_uploader, type=["txt"])
 
 # --- Separator ---
 st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 
 # --- Section 2: Excel upload ---
-st.markdown("<p class='upload-label'>🗃️ Upload Excel file</p>", unsafe_allow_html=True)
-uploaded_excel = st.file_uploader("", type=["xlsx", "xls"])
+uploaded_excel = labeled_section("🗃️ Upload Excel file", st.file_uploader, type=["xlsx", "xls"])
 
 # --- Separator ---
 st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 
 # --- Section 3: Options ---
-st.markdown("<p class='upload-label'>⚙️ Generation mode</p>", unsafe_allow_html=True)
-mode = st.radio("", ["One file per row", "All in a single file"])
+mode = labeled_section("⚙️ Generation mode", st.radio, options=["One file per row", "All in a single file"])
 
 # --- Separator ---
 st.markdown("<div class='separator'></div>", unsafe_allow_html=True)

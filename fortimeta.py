@@ -78,7 +78,7 @@ if uploaded_excel and uploaded_template:
         st.error(f"Error reading file: {e}")
         st.stop()
         
-    if labeled_section(st.button("🚀 Generate files")):
+    if st.button("🚀 Generate files"):
         if mode == "One file per row":
             zip_buffer = io.BytesIO()
             with zipfile.ZipFile(zip_buffer, "w", zipfile.ZIP_DEFLATED) as zf:

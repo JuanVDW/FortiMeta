@@ -14,8 +14,8 @@ with col2:
     st.markdown("<h1 style='margin-top: 7px;margin-left:-20px;'>Generate metadata variables</h1>", unsafe_allow_html=True)
 
 # --- File uploads ---
-uploaded_excel = st.file_uploader("🗃️ Upload Excel file", type=["xlsx", "xls"])
 uploaded_template = st.file_uploader("📄 Upload Template file", type=["txt"])
+uploaded_excel = st.file_uploader("🗃️ Upload Excel file", type=["xlsx", "xls"])
 
 mode = st.radio("Generation mode:", ["One file per row", "All in a single file"])
 
@@ -53,6 +53,6 @@ if uploaded_excel and uploaded_template:
             st.download_button(
                 label="📄 Download file",
                 data=final_text,
-                file_name="output_single.txt",
+                file_name="output.txt",
                 mime="text/plain",
             )

@@ -48,7 +48,7 @@ uploaded_template = labeled_section("📄 Upload Template file", st.file_uploade
 st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 
 # --- Excel upload ---
-uploaded_excel = labeled_section("🗃️ Upload Excel file", st.file_uploader, type=["xlsx", "xls"])
+uploaded_excel = labeled_section("🗃️ Upload Excel/CSV file", st.file_uploader, type=["xlsx", "xls", "csv"])
 
 # --- Separator ---
 st.markdown("<div class='separator'></div>", unsafe_allow_html=True)

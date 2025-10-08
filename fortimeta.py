@@ -63,8 +63,21 @@ st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 if uploaded_excel and uploaded_template:
     template_text = uploaded_template.read().decode("utf-8")
     template = Template(template_text)
-    data = pd.read_excel(uploaded_excel)
-
+    file_name = uploaded_excel.name.lower()
+    try:
+        if file_name.endswith(".xlsx"):
+            data = pd.read_excel(uploaded_excel, engine="openpyxl")
+        elif file_name.endswith(".xls"):
+            data = pd.read_excel(uploaded_excel, engine="xlrd")  # xlrd<2.0
+        elif file_name.endswith(".csv"):
+            data = pd.read_csv(uploaded_excel)
+        else:
+            st.error("Unsupported file format")
+            st.stop()
+    except Exception as e:
+        st.error(f"Error reading file: {e}")
+        st.stop()
+        
     if st.button("🚀 Generate files"):
         if mode == "One file per row":
             zip_buffer = io.BytesIO()

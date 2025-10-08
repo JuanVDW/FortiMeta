@@ -19,9 +19,9 @@ with col2:
 st.markdown("""
     <style>
         .upload-label {
-            font-size: 28px;
+            font-size: 36px;
             font-weight: bold;
-            margin-bottom: -10px;
+            margin-bottom: -20px;
         }
         .section {
             margin-top: 30px;

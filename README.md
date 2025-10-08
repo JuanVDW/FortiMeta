@@ -46,10 +46,10 @@
 | Bob   | OpenAI     |
 
 **Template (template.txt):**
-
-to configure metadata
-  edit "{{hostname}}"-"global"
-    set {{siteID}}
-    set {{subnet}}.0/24
-  next
-end
+   ```text
+   to configure metadata
+     edit "{{hostname}}"-"global"
+       set {{siteID}}
+       set {{subnet}}.0/24
+     next
+   end

@@ -26,11 +26,11 @@ st.markdown("""
         .section {
             margin-top: 30px;
             margin-bottom: 15px;
-        }
+        }   
         .separator {
-            border-top: 1px solid #ccc;
-            margin-top: 30px;
-            margin-bottom: 30px;
+            height: 20px;
+            border: none;
+            margin: 10px 0;
         }
     </style>
 """, unsafe_allow_html=True)

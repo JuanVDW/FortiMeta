@@ -15,14 +15,6 @@ with col1:
 with col2:
     st.markdown("<h1 style='margin-top: 7px;margin-left:-20px;'>Generate metadata variables</h1>", unsafe_allow_html=True)
 
-# --- README.md ---
-with open("README.md", "r", encoding="utf-8") as f:
-    readme_content = f.read()
-
-# --- Show/Hide Bouton ---
-with st.expander("📘 Show/Hide Instructions"):
-    st.markdown(readme_content, unsafe_allow_html=True)
-
 # --- Global style for labels and layout ---
 st.markdown("""
     <style>
@@ -105,5 +97,15 @@ if uploaded_excel and uploaded_template:
                 file_name="output.txt",
                 mime="text/plain",
             )
+# --- Section 5: Info ---
 else:
     st.info("⬆️ Please upload both the Excel and the Template files to continue.")
+
+# --- README.md ---
+with open("README.md", "r", encoding="utf-8") as f:
+    readme_content = f.read()
+
+# --- Show/Hide Bouton ---
+with st.expander("📘 Show/Hide Instructions"):
+    st.markdown(readme_content, unsafe_allow_html=True)
+

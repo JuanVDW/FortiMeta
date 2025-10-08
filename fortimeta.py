@@ -33,7 +33,8 @@ st.markdown("""
             margin: 10px 0;
         }
         div.stButton > button:first-child {
-            font-size: 20px;
+            font-size: 22px !important;
+            font-weight: bold !important;
             padding: 12px 24px;
         }
     </style>
@@ -114,6 +115,9 @@ if uploaded_excel and uploaded_template:
                 file_name="output.txt",
                 mime="text/plain",
             )
+
+# --- Separator ---
+st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 
 # --- README.md ---
 with open("README.md", "r", encoding="utf-8") as f:

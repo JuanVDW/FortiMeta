@@ -1,7 +1,6 @@
 streamlit
 pandas
 jinja2
-openpyxl
 xlrd
 zipfile
 io

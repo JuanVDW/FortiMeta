@@ -35,7 +35,7 @@ st.markdown("""
         div.stButton > button:first-child {
             font-size: 22px !important;
             font-weight: bold !important;
-            padding: 12px 24px;
+            padding: 24px 48px !important;
         }
     </style>
 """, unsafe_allow_html=True)

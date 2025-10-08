@@ -19,7 +19,7 @@ with col2:
 st.markdown("""
     <style>
         .upload-label {
-            font-size: 22px;
+            font-size: 28px;
             font-weight: bold;
             margin-bottom: -10px;
         }

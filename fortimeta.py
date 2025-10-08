@@ -33,7 +33,7 @@ st.markdown("""
             margin: 10px 0;
         }
         div.stButton > button:first-child {
-            padding: 24px 48px;
+            padding: 20px 42px;
             background-color: #e60000;
         }
 

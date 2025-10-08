@@ -6,7 +6,7 @@ import zipfile
 import xlrd
 
 # --- Page setup ---
-st.set_page_config(page_title="FortiMeta", page_icon="logo.png", layout="left")
+st.set_page_config(page_title="FortiMeta", page_icon="logo.png", layout="wide")
 
 # --- Header with logo and title ---
 col1, col2 = st.columns([1, 5])

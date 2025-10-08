@@ -14,6 +14,15 @@ with col1:
     st.image("logo.png", width=120)
 with col2:
     st.markdown("<h1 style='margin-top: 7px;margin-left:-20px;'>Generate metadata variables</h1>", unsafe_allow_html=True)
+import streamlit as st
+
+# --- Lire le fichier README.md ---
+with open("README.md", "r", encoding="utf-8") as f:
+    readme_content = f.read()
+
+# --- Bouton Show/Hide avec expander ---
+with st.expander("📘 Show/Hide Instructions / README"):
+    st.markdown(readme_content, unsafe_allow_html=True)
 
 # --- Global style for labels and layout ---
 st.markdown("""

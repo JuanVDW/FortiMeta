@@ -43,7 +43,7 @@ st.markdown("""
 def labeled_section(label, widget_func, *args, **kwargs):
     with st.container():
         st.markdown(f"<p class='upload-label'>{label}</p>", unsafe_allow_html=True)
-        return widget_func("", *args, **kwargs)
+        return widget_func(" ", *args, label_visibility="collapsed", **kwargs)
 
 # --- Template upload ---
 uploaded_template = labeled_section("📄 Upload Template file", st.file_uploader, type=["txt"])

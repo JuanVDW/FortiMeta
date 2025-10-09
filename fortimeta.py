@@ -72,7 +72,7 @@ if uploaded_excel and uploaded_template:
         if file_name.endswith(".xlsx"):
             data = pd.read_excel(uploaded_excel, engine="openpyxl")
         elif file_name.endswith(".xls"):
-            data = pd.read_excel(uploaded_excel, engine="xlrd")  # xlrd<2.0
+            data = pd.read_excel(uploaded_excel, engine="xlrd")
         elif file_name.endswith(".csv"):
             data = pd.read_csv(uploaded_excel)
         else:

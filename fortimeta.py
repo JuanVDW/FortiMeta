@@ -21,7 +21,7 @@ st.markdown("""
         .upload-label {
             font-size: 22px !important;
             font-weight: bold !important;
-            margin-bottom: -10px !important;
+            margin-bottom: -30px !important;
         }
         .section {
             margin-top: 30px;
@@ -43,7 +43,7 @@ st.markdown("""
 def labeled_section(label, widget_func, *args, **kwargs):
     with st.container():
         st.markdown(f"<p class='upload-label'>{label}</p>", unsafe_allow_html=True)
-        return widget_func(" ", *args, label_visibility="collapsed", **kwargs)
+        return widget_func("", *args, **kwargs)
 
 # --- Template upload ---
 uploaded_template = labeled_section("📄 Upload Template file", st.file_uploader, type=["txt"])

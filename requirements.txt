@@ -2,5 +2,4 @@ streamlit
 pandas
 jinja2
 xlrd
-zipfile
 io

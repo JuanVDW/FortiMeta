@@ -58,7 +58,7 @@ uploaded_excel = labeled_section("🗃️ Upload Excel/CSV file", st.file_upload
 st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
 
 # --- Mode ---
-mode = labeled_section("⚙️ Generation mode", st.radio, options=["One file per row", "All in a single file"])
+mode = labeled_section("⚙️ Generation mode", st.radio, options=["All in a single file", "One file per row"])
 
 # --- Separator ---
 st.markdown("<div class='separator'></div>", unsafe_allow_html=True)
@@ -83,7 +83,22 @@ if uploaded_excel and uploaded_template:
         st.stop()
         
     if st.button("🚀 Generate files"):
-        if mode == "One file per row":
+        if mode == "All in a single file":
+            all_texts = []
+            for i, row in data.iterrows():
+                context = row.to_dict()
+                output_text = template.render(**context)
+                all_texts.append(output_text)
+            final_text = "\n".join(all_texts)
+            st.success("Single file generated ✅")
+            st.download_button(
+                label="📄 Download file",
+                data=final_text,
+                file_name="output.txt",
+                mime="text/plain",
+            )
+
+        else:
             zip_buffer = io.BytesIO()
             with zipfile.ZipFile(zip_buffer, "w", zipfile.ZIP_DEFLATED) as zf:
                 for i, row in data.iterrows():
@@ -98,21 +113,6 @@ if uploaded_excel and uploaded_template:
                 data=zip_buffer,
                 file_name="outputs.zip",
                 mime="application/zip",
-            )
-
-        else:
-            all_texts = []
-            for i, row in data.iterrows():
-                context = row.to_dict()
-                output_text = template.render(**context)
-                all_texts.append(output_text)
-            final_text = "\n".join(all_texts)
-            st.success("Single file generated ✅")
-            st.download_button(
-                label="📄 Download file",
-                data=final_text,
-                file_name="output.txt",
-                mime="text/plain",
             )
 
 # --- Separator ---

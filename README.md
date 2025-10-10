@@ -37,7 +37,7 @@
    - **All in a single file** → merges all generated texts into one file  
 
 4. **Click “Generate files”**  
-   - You’ll get a ZIP archive (if multiple files) or a single `.txt` file to download.
+   - You’ll get a single `.txt` file or a ZIP archive (if multiple files) to download.
 
 ---
 

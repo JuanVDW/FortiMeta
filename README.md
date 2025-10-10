@@ -18,13 +18,18 @@
 ## 🧠 How It Works
 
 1. **Upload your Excel file**  
-   - The first row must contain variable names (e.g. `Name`, `Email`, `Company`).
+   - The first row must contain variable names (e.g. `hostname`, `vdom`, `siteID`).
 
 2. **Upload your Template file**  
    - Example template:
      ```
-     Hello $Name$,
-     Welcome to $Company$!
+     edit siteID
+      config dynamic_mapping
+        edit "{{hostname}}"-"{{vdom}}"
+          set value {{siteID}}
+        next
+      end
+    next
      ```
 
 3. **Choose the generation mode**

@@ -52,7 +52,7 @@
 | mult03-mol         | global | Care         | 668    | 10.6.68     | 1.10.97.107   |
 
 **Template (template.txt):**
-   ```text
+```text
 config fmg variable
   edit hostname
     config dynamic_mapping

@@ -23,13 +23,13 @@
 2. **Upload your Template file**  
    - Example template:
      ```
-edit siteID
-  config dynamic_mapping
-    edit "{{hostname}}"-"{{vdom}}"
-      set value {{siteID}}
-    next
-  end
-next
+     edit siteID
+       config dynamic_mapping
+         edit "{{hostname}}"-"{{vdom}}"
+           set value {{siteID}}
+         next
+       end
+     next
      ```
 
 3. **Choose the generation mode**
